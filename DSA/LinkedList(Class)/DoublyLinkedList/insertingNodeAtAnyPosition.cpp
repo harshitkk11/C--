@@ -21,7 +21,7 @@ void insertAtHead(Node* &head, int data){
     head = temp;
 }
 
-void insertAtTail(Node* tail, int data){
+void insertAtTail(Node* &tail, int data){
     Node* temp = new Node(data);
     tail->next = temp;
     temp->prev = tail;
@@ -31,27 +31,25 @@ void insertAtTail(Node* tail, int data){
 void insertAtAnyPosition(Node* &head,Node* &tail, int data, int position){
     if(position ==1){
         insertAtHead(head, data);
+        return;
     }
-    else{
-        Node* temp = head;
-        int count = 1;
-        while (count < position-1)
-        {
-            temp = temp->next;
-            count++;
-        }
-        if(temp->next == NULL){
-            insertAtTail(tail, data);
-        }
-        else{
-            Node* newNode = new Node(data);
+    Node* temp = head;
+    int count = 1;
+    while (count < position-1)
+    {
+        temp = temp->next;
+        count++;
+    }
+    if(temp->next == NULL){
+        insertAtTail(tail, data);
+        return; 
+    }
+    Node* newNode = new Node(data);
 
-            newNode->next = temp->next;
-            temp->next = newNode;
-            newNode->prev = temp;
-            temp = newNode;
-        }
-    }
+    newNode->next = temp->next;
+    temp->next = newNode;
+    newNode->prev = temp;
+    temp = newNode;
     
 }
 
@@ -69,9 +67,15 @@ int main(){
     Node* head = node1;
     Node* tail = node1;
 
+    insertAtHead(head, 9);
     insertAtHead(head, 20);
+    insertAtHead(head, 5);
 
-    insertAtAnyPosition(head, tail, 30, 3);
+    insertAtTail(tail, 20);
+    insertAtTail(tail, 30);
+    insertAtTail(tail, 40);
+
+    insertAtAnyPosition(head, tail, 50, 7);
 
     printLinkedList(head);
 
