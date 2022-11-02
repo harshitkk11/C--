@@ -76,6 +76,7 @@ int main(){
     insertAtTail(tail, 40);
 
     insertAtAnyPosition(head, tail, 50, 7);
+    insertAtAnyPosition(head, tail, 22, 4);
 
     printLinkedList(head);
 
