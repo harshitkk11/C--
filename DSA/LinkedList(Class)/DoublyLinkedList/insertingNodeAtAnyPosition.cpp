@@ -47,6 +47,7 @@ void insertAtAnyPosition(Node* &head,Node* &tail, int data, int position){
     Node* newNode = new Node(data);
 
     newNode->next = temp->next;
+    temp ->next ->prev = newNode;
     temp->next = newNode;
     newNode->prev = temp;
     temp = newNode;
