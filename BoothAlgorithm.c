@@ -15,7 +15,7 @@ int main(){
     Qn = QR % 10;
 
     for (i = 0; BR > 0; i++) {
-        BR = BR / 2;
+        BR = BR / 10;
     }
     
     
