@@ -1,3 +1,7 @@
+// Time complexity = O(n)*O(n) = O(n^2)
+// O(n) for first loop to select elements one by one
+// O(n) for second loop to compare elements with each other
+
 #include <iostream>
 #include <vector>
 using namespace std;
