@@ -1,14 +1,15 @@
-// Time complexity = O(n)*O(n) = O(n^2)
-// O(n) for first loop to select elements one by one
-// O(n) for second loop to compare elements with each other
-
 #include <iostream>
 #include <vector>
 using namespace std;
 
-int main(){
-    vector<int>A = {5,4,8,10,0};
+void print(vector<int>A){
+    for (int i = 0; i < A.size(); i++)
+    {
+        cout<<A[i]<<" ";
+    }
+}
 
+void Selection_Sort(vector<int>A){
     for (int i=0; i<A.size(); i++){
         for(int j=i+1; j<A.size();j++){
             int temp;
@@ -19,11 +20,16 @@ int main(){
             }
         }
     }
+    print(A);
+}
 
-    for (int i = 0; i < A.size(); i++)
-    {
-        cout<<A[i]<<" ";
-    }
-        
+void Bubble_Sort(vector<int>A){
+
+}
+
+int main(){
+    vector<int>A = {5,4,8,10,0};
+    Selection_Sort(A);
+
     return 0;
 }

@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     vector<int>A = {5,4,8,10,1};
 
-    for(int i=0; i<A.size(); i++){
+    for(int i=0; i<A.size()-1; i++){
         if (A[i] > A[i+1])
         {
             int temp = A[i];
