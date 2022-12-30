@@ -7,7 +7,7 @@
 using namespace std;
 
 int main(){
-    vector<int>A = {5,4,8,10,1};
+    vector<int>A = {5,4,8,10,0};
 
     for (int i=0; i<A.size(); i++){
         for(int j=i+1; j<A.size();j++){
