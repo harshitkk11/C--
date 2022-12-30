@@ -28,6 +28,9 @@ void Selection_Sort(vector<int>A){
 }
 
 void Bubble_Sort(vector<int>A, int n){
+    // Worst and Average Case Time Complexity: O(N2). The worst case occurs when an array is reverse sorted.
+    // Best Case Time Complexity: O(N). The best case occurs when an array is already sorted.
+    // Auxiliary Space: O(1)
     if(n == 0){
         print(A);
         return;
