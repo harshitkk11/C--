@@ -46,11 +46,29 @@ void Bubble_Sort(vector<int>A, int n){
     Bubble_Sort(A, n-1);
 }
 
+void Insertion_Sort(vector<int> &A){
+    int i, j, key;
+
+    for(i=1; i<A.size(); i++){
+        key = A[i];
+        j = i - 1;
+
+        while(j>=0 && A[j] > key){
+            A[j+1] = A[j];
+            j--;
+        }
+        A[j+1] = key;
+    }
+
+    print(A);
+}
+
 int main(){
     vector<int>A = {5,4,8,10,1};
 
     Selection_Sort(A);
     Bubble_Sort(A, A.size());
+    Insertion_Sort(A);
 
     return 0;
 }
