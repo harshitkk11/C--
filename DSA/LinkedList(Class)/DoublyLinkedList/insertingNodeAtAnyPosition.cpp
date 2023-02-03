@@ -29,7 +29,7 @@ void insertAtTail(Node* &tail, int data){
 }
 
 void insertAtAnyPosition(Node* &head,Node* &tail, int data, int position){
-    if(position ==1){
+    if(position == 1){
         insertAtHead(head, data);
         return;
     }
