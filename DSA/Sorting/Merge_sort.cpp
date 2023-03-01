@@ -4,6 +4,7 @@ using namespace std;
 void merge(int arr[], int start, int mid, int end){
     int left_len = mid-start+1;
     int right_len = end-mid;
+
     int *leftarray = new int [left_len];
     int *rightarray = new int[right_len];
 
@@ -11,6 +12,7 @@ void merge(int arr[], int start, int mid, int end){
     for(int i=0; i<left_len; i++){
         leftarray[i] = arr[arr_index++];
     }
+    
     arr_index = mid+1;
     for(int j=0; j<right_len; j++){
         rightarray[j] = arr[arr_index++];
@@ -34,7 +36,7 @@ void merge(int arr[], int start, int mid, int end){
     }
 
     while(index2 < right_len){
-        arr[arr_index++] = rightarray[index2];
+        arr[arr_index++] = rightarray[index2++];
     }
 
     delete []leftarray;
@@ -45,7 +47,7 @@ void mergesort(int arr[], int start, int end){
     if(start >= end){
         return;
     }
-    int mid = end + (end - start)/2;
+    int mid = start + (end - start)/2;
     mergesort(arr, start, mid);
     mergesort(arr, mid+1, end);
     merge(arr, start, mid, end);
@@ -55,13 +57,12 @@ void mergesort(int arr[], int start, int end){
 int main(){
     int arr[] = {38, 27, 43, 3, 9, 82, 10};
     int n = 7;
-     for(int i=0; i<n; i++){
-        cout<<arr[i]<<" ";
-    }
+
     mergesort(arr, 0, n-1);
 
     for(int j=0; j<n; j++){
         cout<<arr[j]<<" ";
     }
+
     return 0;
 }
